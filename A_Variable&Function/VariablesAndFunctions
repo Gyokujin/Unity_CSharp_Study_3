@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VariablesAndFunctions : MonoBehaviour
+{
+    public int myCatAge;
+
+    private void Start()
+    {
+        myCatAge = 5;
+        myCatAge = Multiply(myCatAge);
+        Debug.Log("myCatage : " + myCatAge);
+    }
+
+    int Multiply(int number)
+    {
+        int result;
+        result = number * 2;
+        return result;
+    }
+}
