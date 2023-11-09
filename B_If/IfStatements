@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IfStatements : MonoBehaviour
+{
+    public float coffeeTemperature = 85.0f;
+    public float hotLimitTemperature = 70.0f;
+    public float coldLimitTemperature = 40.0f;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TemperatureText();
+        }
+
+        coffeeTemperature -= Time.deltaTime * 5f;
+    }
+
+    public void TemperatureText()
+    {
+        if (coffeeTemperature > hotLimitTemperature) // 커피의 온도가 가장 뜨거운 섭취 온도보다 높은 경우
+        {
+            print("Coffee is too hot");
+        }
+        else if (coffeeTemperature < coldLimitTemperature) // 그렇지 않고 커피 온도가 가장 차가운 섭취 온도보다 낮은 경우
+        {
+            print("Coffee is too cold");
+        }
+        else // 둘 다 해당되지 않는 경우
+        {
+            print("Coffee is just right");
+        }
+    }
+}
